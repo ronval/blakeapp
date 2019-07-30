@@ -1,0 +1,36 @@
+/ ========== Left Sidebar Start ==========
+#left-side-bar.left-side-menu
+  #left-side-menu-container.slimscroll-menu
+    / LOGO
+    %a.logo.text-center{:href => "/"}
+      %span.logo-lg
+        -# %img#side-main-logo{:alt => "", :height => "16", :src => "./public/images/logo.png"}/
+      %span.logo-sm
+        %img{:alt => "", :height => "16", :src => "./public/images/logo_sm.png"}/
+    / - Sidemenu
+    %ul#left-bar-menu.metismenu.side-nav
+      %li.side-nav-title.side-nav-item Navigation
+      %li.side-nav-item
+        %a.side-nav-link{:href => "#{}"}
+          %i.mdi.mdi-cloud-upload
+          %span Home
+      %li.side-nav-item
+        %a.side-nav-link{:href => "#{}"}
+          %i.mdi.mdi-file-document-edit-outline
+          %span Subjects
+      %li.side-nav-item
+        %a.side-nav-link{:href => "#{}"}
+          %i.mdi.mdi-folder-edit-outline
+          %span Announcements
+      %li.side-nav-item
+        %a.side-nav-link{:href => "#{}"}
+          %i.mdi.mdi-television-guide
+          %span Settings
+        
+
+      
+
+    / End Sidebar
+    .clearfix
+  / Sidebar -left
+/ Left Sidebar End

@@ -1,0 +1,68 @@
+.agent {
+  .profile-photo {
+    text-align: center;
+    .rounded-circle {
+      height: 128px;
+      width: 128px;
+    }
+
+    .image-replace {
+      height: 128px;
+      width: 128px;
+      border: 1px solid #727cf5;
+      text-align: center;
+      margin: auto;
+      border-radius: 50%;
+      padding: 35px 0;
+      font-size: 40px;
+    }
+  }
+  .upload-profile {
+    padding: 0 40%;
+    @media (max-width: 414px) {
+      padding: 0;
+    }
+
+    text-align: center;
+    span {
+      position: relative;
+      overflow: hidden;
+      height: 30px;
+      display: block;
+
+      .mdi {
+        font-size: 20px;
+        color: #727cf5;
+      }
+
+      a {
+        position: relative;
+        overflow: hidden;
+      }
+
+      a + input {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        cursor: pointer;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .submit-form {
+    text-align: center
+  }
+}
+
+
+.signature {
+  table {
+    .action {
+      font-size: 25px;
+    }
+  }
+}

@@ -1,0 +1,32 @@
+.dashboard-page {
+
+  .page-title-box {
+    margin: auto;
+  }
+
+  .dashboard-item {
+    margin: 20px 0 ;
+    .dashboard-btn {
+      margin: auto;
+      height: 150px;
+      width: 220px;
+      background-color: #fff;
+      padding: 12% 10px;
+      border: 1px solid #9fa5ef;
+
+      i.mdi {
+        font-size: 35px;
+        color: #9fa5ef;
+      }
+
+      &:hover, &:focus {
+        background-color: #9fa5ef;
+        color: #fff;
+        i.mdi {
+          font-size: 35px;
+          color: #fff;
+        }
+      }
+    }
+  }
+}

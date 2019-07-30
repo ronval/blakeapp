@@ -1,0 +1,21 @@
+.agency-signup {
+  .form-wizard-header {
+    margin: 0;
+  }
+
+  .tab-content {
+    padding: 15px 30px;
+
+    input {
+      width: 100%;
+    }
+
+    .form-item {
+      margin-bottom: 20px;
+      .error-message {
+        display: block;
+        color: red;
+      }
+    }
+  }
+}
