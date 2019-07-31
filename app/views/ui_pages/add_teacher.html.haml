@@ -1,0 +1,28 @@
+.container.top-buffer
+  .card  
+    .card-body
+      %h4.mb-3.header-title ADD TEACHER
+      .col-lg-12
+        %form
+          .form-group.mb-3
+            %label{:for => "simpleinput"} Full Name
+            %input#simpleinput.form-control{:type => "text"}/
+          .form-group.mb-3
+            %label{:for => "simpleinput"} Phone
+            %input#simpleinput.form-control{:type => "text"}/
+          .form-group.mb-3
+            %label{:for => "simpleinput"} Email
+            %input#simpleinput.form-control{:type => "text"}/
+          %h5
+            Choose teachable classes
+          .mt-3
+            .custom-control.custom-checkbox
+              %input#customCheck1.custom-control-input{:type => "checkbox"}/
+              %label.custom-control-label{:for => "customCheck1"} Math
+            .custom-control.custom-checkbox
+              %input#customCheck2.custom-control-input{:type => "checkbox"}/
+              %label.custom-control-label{:for => "customCheck2"} Science
+          %br
+          %br
+          %button.btn.btn-primary{:type => "submit"} Submit
+      

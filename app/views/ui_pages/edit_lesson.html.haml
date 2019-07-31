@@ -1,0 +1,33 @@
+.container.top-buffer
+  .row
+    .col-lg-12
+
+      .card
+        .card-body
+          %h4.mb-3.header-title Edit Lesson
+          %form
+            .form-group
+              %label.col-form-label{:for => "inputState"} Class
+              %select#inputState.form-control
+                %option Life Couch
+              
+            .form-group
+              %label{:for => "simpleinput"} Lesson Name
+              %input#simpleinput.form-control{:type => "text"}/
+            .form-group.mb-3
+              %label{:for => "example-textarea"} Section
+              %textarea#example-textarea.form-control{:rows => "5"}
+            .row.top-buffer 
+              .col-lg-12
+                %button.btn.btn-outline-success.btn-rounded.float-right.left-buffer{:type => "submit"} + Section
+            
+            
+                %button.btn.btn-outline-danger.btn-rounded.float-right{:type => "submit"} - Section
+            .row.top-buffer
+              .col.text-center
+                %button.btn.btn-primary.submit-button-width{:type => "submit"} Submit
+        / end card-body
+      / end card
+    / end col
+
+      

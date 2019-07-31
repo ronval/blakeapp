@@ -1,0 +1,25 @@
+.container.top-buffer
+  .card  
+    .card-body
+      %h4.mb-3.header-title Create a class
+      .row
+      .col-lg-12
+        %form
+          .form-group.mb-3
+            %label{:for => "simpleinput"} Subject
+            %input#simpleinput.form-control{:type => "text"}/
+          .form-group.mb-3
+            %label.col-form-label{:for => "inputState"} Teacher
+            %select#inputState.form-control
+              %option Yoda (Meaning of Life)
+              %option Mr Rogers (Moral Ethics)
+              %option Count Dracula (Math)
+              %option Big Bird (Gangster Street Knowledge)
+          .form-group.mb-3
+            %label.col-form-label{:for => "inputState"} School Year
+            %select#inputState.form-control
+              %option 2018/2019
+              %option 2019/2020
+              %option 2020/2021
+          %button.btn.btn-primary{:type => "submit"} Submit
+      
