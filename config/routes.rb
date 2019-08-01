@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   get "ui_student_list" => "ui_pages#student_list", :as => :ui_student_index
   get "ui_grade_lesson" => "ui_pages#grade_lesson", :as=> :ui_grade_lesson
 
+  resources :subjects
 end
