@@ -1,0 +1,13 @@
+.container.top-buffer
+  .card  
+    .card-body
+      %h4.mb-3.header-title CREATE CLASS
+      .row
+      .col-lg-12
+        =bootstrap_form_for @subject do |f|
+          =f.text_field :name, label:"Subject"
+          = f.select :teacher_id, options_for_select(@teachers.collect{ |teacher| [teacher.full_name, teacher.id] }), { label: "Who will teach the class"}
+          = f.select :school_year, [["2018/2019", "2018/2019"],["2019/2020", "2019/2020"], ["2020/2021", "2020/2021"]], { label: "Please pick a school year"}
+          =f.submit "Create Class", class: "btn btn-primary"
+
+

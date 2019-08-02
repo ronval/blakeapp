@@ -2,11 +2,20 @@ class SubjectsController < ApplicationController
 
 
   def new
-    @class = Subject.new
+    @subject = Subject.new
+    @teachers = Teacher.all
   end
 
   def create
-    Subject.create(subject_params)
+    @subject = Subject.new(subject_params)
+    @teachers = Teacher.all
+    if @subject.save
+      flash[:success] = "You created a new subject."
+      redirect_to new_subject_path
+    else
+      render :new
+    end 
+
   end
 
   private
