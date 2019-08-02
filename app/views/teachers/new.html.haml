@@ -1,0 +1,14 @@
+.container.top-buffer
+  .card  
+    .card-body
+      %h4.mb-3.header-title ADD TEACHER
+      .col-lg-12
+        =bootstrap_form_for @teacher do |f|
+          =f.text_field :full_name, label:"Full Name"
+          =f.phone_field :phone, label:"Phone"
+          =f.email_field :email, label:"Email"
+         
+          =f.submit "Create Class", class: "btn btn-primary"
+
+
+      

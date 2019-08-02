@@ -11,4 +11,6 @@ Rails.application.routes.draw do
   get "ui_grade_lesson" => "ui_pages#grade_lesson", :as=> :ui_grade_lesson
 
   resources :subjects
+  resources :teachers
+  resources :lessons
 end
