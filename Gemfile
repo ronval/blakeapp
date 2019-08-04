@@ -28,6 +28,7 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'bootstrap-sass'
 gem "bootstrap_form", ">= 4.2.0"
+gem "cocoon"
 
 
 
