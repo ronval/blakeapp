@@ -5,15 +5,14 @@
         .card-body
           %h4.mb-3.header-title 
             Add Lesson
-            -if @lesson.errors
-              -@lesson.errors.each do |error|
-                -@lesson.errors.messages[:base].each do |message|
-                  %div(class="dontprint alert alert-danger")
-                    %div.content-message
-                      = content_tag :div, message, :id => "danger" if message.is_a?(String)
-                      %a.close(data-dismiss='alert') &#215;
+            -if @lesson.errors.any?
+              
+              %div(class="dontprint alert alert-danger")
+                %div.content-message
+                  = content_tag :div, "Please fill the form completely including adding sections below", :id => "danger" 
+                  %a.close(data-dismiss='alert') &#215;
           =bootstrap_form_for @lesson do |f|
-            =f.select :subject_id, options_for_select(@subjects.collect{ |subject| [subject.name, subject.id] }), { label: "Please pick a subjet"}
+            =f.select :subject_id, options_for_select(@subjects.collect{ |subject| [subject.name, subject.id] }), { label: "Please pick a subjet"}, :disabled => @subjects.collect{ |subject| [subject.name, subject.id] }
             =f.text_field :name
             %h3 Sections
             #section

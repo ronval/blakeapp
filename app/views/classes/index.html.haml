@@ -1,0 +1,21 @@
+.container.top-buffer
+  .row
+    .col-12
+      .card
+        .card-body
+          %h4.header-title 
+            Student Name: 
+            =@student.full_name
+          %br
+          %br
+          -@subjects.each do |subject|
+            %h5.header-title 
+              Class: 
+              =subject.name
+            %h5.header-title 
+              Teacher: 
+              =subject.teacher.full_name
+              =link_to "View Class Lessons", class_path(subject)
+                    
+
+  

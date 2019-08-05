@@ -1,0 +1,5 @@
+.nested-fields.form-group.mb-3
+  .field
+    = f.text_area :content, hide_label: true ,placeholder: 'Your inquiry goes here', class: "form-control", id: "example-textarea", :rows => "4"
+  = link_to_remove_association "Remove Section", f, class: "btn"
+

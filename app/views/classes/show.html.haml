@@ -1,0 +1,45 @@
+.container.top-buffer
+  .row
+    .col-12
+      .card
+        .card-body
+          %h4.header-title 
+            Student Name: 
+            =@student.full_name
+          %br
+          %br
+          
+            
+            .table-responsive
+              %table.table.mb-0
+                %thead
+                  %tr
+                    %th{:scope => "col"} Lesson
+                    %th{:scope => "col"} Section 1
+                    %th{:scope => "col"} Section 2
+                    %th{:scope => "col"} Section 3
+                    %th{:scope => "col"} Section 4
+                    %th{:scope => "col"} Section 5
+                    
+                %tbody
+                  -@assignments.each do |assignment|
+                    
+                    %tr
+                      %th{:scope => "row"} 
+                        =assignment.id
+                        %br
+                        
+                        - if assignment.accessible
+                          =link_to "Start Lesson", start_lesson_path(assignment_chapter_id:assignment.assignment_chapters.first.id, subject_id:assignment.subject.id), class: "btn btn-outline-success btn-rounded", method: :post
+                      -assignment.assignment_chapters.order('created_at ASC').each do |chapter|
+                        %td 
+                          =chapter.completed ? "Completed" : "Incomplete"
+                          %br
+                          - if chapter.accessible
+                            =link_to "View", assignment_chapter_path(chapter), class: "btn btn-outline-success btn-rounded"
+                          -else
+                            Not Yet Available
+                          
+                    
+
+  

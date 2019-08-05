@@ -17,6 +17,10 @@ class SubjectsController < ApplicationController
     end 
   end
 
+  def index
+    @subjects = Subject.all
+  end
+
   private
 
   def subject_params

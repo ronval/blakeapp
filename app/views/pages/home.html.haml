@@ -1,1 +1,27 @@
-this is a test
+.container
+  %h3 For Teachers
+  %ul
+    %li
+      =link_to "Add class", new_subject_path
+    %li 
+      =link_to "Add Teacher", new_teacher_path
+    %li 
+      =link_to "Create Lesson", new_lesson_path
+    
+    %li 
+      =link_to "All classes", subjects_path
+    %li 
+      =link_to "Add Student", new_student_path
+    %li
+      =link_to "View My Students By Class", ui_student_index_path
+    %li
+      =link_to "Grade Lesson", ui_grade_lesson_path 
+  %br
+  %br
+  %h3 For Students
+  %ul
+    %li
+      =link_to "My Classes", classes_path
+    
+    
+      

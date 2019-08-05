@@ -1,0 +1,4 @@
+-@lessons.each do |lesson|
+  %ul
+    %li
+      =link_to "#{lesson.name.capitalize}", edit_lesson_path(lesson)

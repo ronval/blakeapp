@@ -9,8 +9,13 @@ Rails.application.routes.draw do
   get "ui_add_student" => "ui_pages#add_student", :as => :ui_add_student
   get "ui_student_list" => "ui_pages#student_list", :as => :ui_student_index
   get "ui_grade_lesson" => "ui_pages#grade_lesson", :as=> :ui_grade_lesson
+  post "lesson/start_lesson" =>"lessons#start_lesson", :as=> :start_lesson
 
   resources :subjects
   resources :teachers
   resources :lessons
+  resources :students 
+  resources :classes
+  resources :assignment_chapters
+  
 end

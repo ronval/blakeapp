@@ -1,0 +1,20 @@
+
+
+
+.container.top-buffer
+  .card  
+    .card-body
+      %h4.mb-3.header-title 
+        status:
+        =@assignment_chapter.completed ? "Completed" : "Incomplete"
+        %br
+        Lesson:
+        =@assignment_chapter.content
+      .col-lg-12
+        =bootstrap_form_for @assignment_chapter, method: :put, remote: true do |f|
+          =f.text_field :answer, label:"Answer"
+          =f.hidden_field :completed, value:true
+          =f.submit "Submit Answer", class: "btn btn-primary"
+
+
+      
