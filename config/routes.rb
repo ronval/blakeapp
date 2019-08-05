@@ -17,5 +17,6 @@ Rails.application.routes.draw do
   resources :students 
   resources :classes
   resources :assignment_chapters
+  resources :class_rooms
   
 end

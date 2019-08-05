@@ -40,7 +40,7 @@ class Assignment < ApplicationRecord
       end 
     end 
     
-     # assignments.where(id:array[0]).first.update_columns(accessible:true)
+     
      a =  assignments.where(id:array[0]).first
      a.update_columns(accessible:true)
      chapter = a.assignment_chapters.first.update_columns(accessible:true)

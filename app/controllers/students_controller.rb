@@ -18,6 +18,7 @@ class StudentsController < ApplicationController
           AssignmentChapter.create(assignment_id:assignment.id, content:section.content)
         end
       end
+        
       Assignment.where(student_id:@student.id, subject_id:params[:student][:subject_id]).first.update_columns(accessible:true)
       
       flash[:success] = "You added a new student"

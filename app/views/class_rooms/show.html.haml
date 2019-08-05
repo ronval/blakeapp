@@ -3,13 +3,15 @@
     .col-12
       .card
         .card-body
-          %h4.header-title 
-            Student Name: 
-            =@student.full_name
+          
+            
           %br
           %br
           
-            
+          -@students.each do |student|
+            %h4.header-title 
+              Student Name: 
+              =student.full_name
             .table-responsive
               %table.table.mb-0
                 %thead
@@ -22,20 +24,19 @@
                     %th{:scope => "col"} Section 5
                     
                 %tbody
-                  -@assignments.each_with_index do |assignment, index|
+                  -student.assignments.order('created_at ASC').each_with_index do |assignment,index|
                     
                     %tr
                       %th{:scope => "row"} 
-                        =index + 1
+                        = index + 1
                         %br
                         
-                        - if assignment.accessible
-                          =link_to "Start Lesson", start_lesson_path(assignment_chapter_id:assignment.assignment_chapters.first.id, subject_id:assignment.subject.id), class: "btn btn-outline-success btn-rounded", method: :post
+                       
                       -assignment.assignment_chapters.order('created_at ASC').each do |chapter|
                         %td 
                           =chapter.completed ? "Completed" : "Incomplete"
                           %br
-                          - if chapter.accessible
-                            =link_to "View", assignment_chapter_path(chapter), class: "btn btn-outline-success btn-rounded"
-                          -else
-                            Not Yet Available
+            %br
+            %br              
+
+  
