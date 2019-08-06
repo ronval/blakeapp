@@ -36,6 +36,6 @@
                           =chapter.completed ? "Completed" : "Incomplete"
                           %br
                           - if chapter.accessible
-                            =link_to "View", assignment_chapter_path(chapter), class: "btn btn-outline-success btn-rounded"
+                            =link_to "View", assignment_chapter_path(chapter), class: "btn btn-outline-success btn-rounded", target: :_blank
                           -else
                             Not Yet Available

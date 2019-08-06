@@ -24,6 +24,7 @@ class LessonsController < ApplicationController
           end
         end 
       end
+
       flash[:success] = "You have created a new lesson."
       redirect_to new_lesson_path
     else
@@ -49,9 +50,7 @@ class LessonsController < ApplicationController
     end 
   end
 
-
   def start_lesson
-    
     assignment_chapter = AssignmentChapter.find_by(id:params[:assignment_chapter_id])
     assignment_chapter.update_columns(accessible:true)
     flash[:success] = "You can now start the section"

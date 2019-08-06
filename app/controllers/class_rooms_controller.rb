@@ -6,9 +6,9 @@ class ClassRoomsController < ApplicationController
   end
 
   def show
-    
     @subject = Subject.find_by(id:params[:id])
     @students = @subject.students
   end
 
 end 
+

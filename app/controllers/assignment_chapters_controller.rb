@@ -9,18 +9,20 @@ class AssignmentChaptersController < ApplicationController
     assignment = @assignment_chapter.assignment
     subject = assignment.subject
     student = assignment.student
+
     if @assignment_chapter.update(answer_params)
-      flash[:success] = "You answered the question"
-
-      full_student_info = Student.where(id:student.id).includes(assignments:[:assignment_chapters]).as_json(:include=>{:assignments=>{:include=>{:assignment_chapters=>{}}}})
       
-
       assignment.open_next_section
       if assignment.completed?
         Assignment.open_next_assignment(subject.id, student.id)
       end
+      assignment.reload
+      @assignment_chapter
+      full_student_info = Student.where(id:student.id).includes(assignments:[:assignment_chapters]).as_json(:include=>{:assignments=>{:include=>{:assignment_chapters=>{}}}})
+      
       respond_to do |format|
-        format.json {render :json=>{student:full_student_info}}
+        format.json {render :json=>{student:full_student_info, message:"You have submitted your answer"}}
+        format.html {render :html}
       end 
       
     else  
@@ -29,10 +31,8 @@ class AssignmentChaptersController < ApplicationController
   end
 
   def answer_params
-    params.require(:assignment_chapter).permit(:answer, :completed)
+    params.require(:assignment_chapter).permit(:id,:answer, :completed)
   end
-
-
 end
 
 
