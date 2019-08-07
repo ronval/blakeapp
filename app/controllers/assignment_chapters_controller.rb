@@ -14,6 +14,8 @@ class AssignmentChaptersController < ApplicationController
       
       assignment.open_next_section
       if assignment.completed?
+        assignment.update_columns(completed:true)
+        assignment.reload
         Assignment.open_next_assignment(subject.id, student.id)
       end
       assignment.reload

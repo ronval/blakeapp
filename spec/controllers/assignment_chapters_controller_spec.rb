@@ -46,9 +46,9 @@ RSpec.describe AssignmentChaptersController do
         assignment_chapter = Fabricate(:assignment_chapter,assignment_id:assignment.id)
         params = {id:1,"assignment_chapter"=>{"answer"=>"the answer is 2", "completed"=>"true"}}
         patch :update, params: params, format: :json
-        assignment = AssignmentChapter.first
-        answer = assignment.answer
-        completed = assignment.completed 
+        ac = AssignmentChapter.first
+        answer = ac.answer
+        completed = ac.completed 
         expect(answer).to eq("the answer is 2")
         expect(completed).to eq(true)
       end
@@ -69,25 +69,26 @@ RSpec.describe AssignmentChaptersController do
         expect(chapter.accessible).to eq(true)
 
       end 
-      # it "should open the next assignment if all current assignment sections are completed" do 
-      #   student = Fabricate(:student)
-      #   teacher = Fabricate(:teacher)
-      #   subject = Fabricate(:subject,teacher_id:teacher.id)
-      #   lesson = Lesson.new(subject_id:subject.id, name:"math")
-      #   lesson.save(:validate => false)
-      #   section_one = Fabricate(:section, lesson_id:lesson.id) 
-      #   section_two = Fabricate(:section, lesson_id:lesson.id) 
+      it "should open the next assignment if all current assignment sections are completed" do 
+        student = Fabricate(:student)
+        teacher = Fabricate(:teacher)
+        subject = Fabricate(:subject,teacher_id:teacher.id)
+        lesson = Lesson.new(subject_id:subject.id, name:"math")
+        lesson.save(:validate => false)
+        section_one = Fabricate(:section, lesson_id:lesson.id) 
+        section_two = Fabricate(:section, lesson_id:lesson.id) 
         
-      #   assignment = Fabricate(:assignment, student_id:student.id, lesson_id:lesson.id, subject_id:subject.id)
-      #   assignment_chapter_one = Fabricate(:assignment_chapter,assignment_id:assignment.id)
-      #   assignment_two = Fabricate(:assignment, student_id:student.id, lesson_id:lesson.id, subject_id:subject.id)
-      #   assignment_two_chapter_one = Fabricate(:assignment_chapter,assignment_id:assignment_two.id)
+        assignment = Fabricate(:assignment, student_id:student.id, lesson_id:lesson.id, subject_id:subject.id)
+        assignment_chapter_one = Fabricate(:assignment_chapter,assignment_id:assignment.id)
+        assignment_two = Fabricate(:assignment, student_id:student.id, lesson_id:lesson.id, subject_id:subject.id)
+        assignment_two_chapter_one = Fabricate(:assignment_chapter,assignment_id:assignment_two.id)
         
-      #   params = {id:1,"assignment_chapter"=>{"answer"=>"the answer is 2", "completed"=>"true"}}
-      #   patch :update, params: params, format: :json
-      #   processed_assignment = Assignment.find_by(id:assignment_two.id)
-      #   expect(assignment_two.accessible).to eq(true)
-      # end 
+        params = {id:1,"assignment_chapter"=>{"answer"=>"the answer is 2", "completed"=>"true"}}
+        patch :update, params: params, format: :json
+        processed_assignment = Assignment.find_by(id:assignment_two.id)
+        assignment_two.reload 
+        expect(assignment_two.accessible).to eq(true)
+      end 
       it "should render the student as json with all the students current progress" do 
         student = Fabricate(:student)
         teacher = Fabricate(:teacher)
