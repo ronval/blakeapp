@@ -29,7 +29,7 @@ When doing things as a student it also uses the last student created. This is be
 
 
 The app covers PART 1, PART 2 and PART 3 of the task provided. 
-I hope I have an app that satisfies these things.
+
 
 Below is a video of the app in action. 
 
