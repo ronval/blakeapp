@@ -1,7 +1,7 @@
 class ClassRoomsController < ApplicationController
 
   def index
-    @teacher = Teacher.first
+    @teacher = Teacher.last
     @subjects = @teacher.subjects
   end
 

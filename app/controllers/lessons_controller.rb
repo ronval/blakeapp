@@ -13,7 +13,6 @@ class LessonsController < ApplicationController
     @lesson = Lesson.new(lesson_params)
     
     @subjects = Subject.all
-    binding.pry
     if @lesson.save
       if @lesson.subject.students.any?
         students = @lesson.subject.students
