@@ -18,8 +18,6 @@ export default class extends Controller {
     document.getElementById("json").innerHTML = the_response;
     document.getElementById("next_section").innerHTML = "You may now continue to the next section/assignment"
     document.getElementById("the_next_section").removeAttribute("disabled"); 
-    //document.getElementById('the_next_section').disabled = "enabled";
-    // $(#'the_next_section').removeAttr('disabled');
-    //$('#the_next_section').prop("disabled", false);
+    
   }
 }
