@@ -10,11 +10,24 @@
         %br
         Lesson:
         =@assignment_chapter.content
-      .col-lg-12
-        =bootstrap_form_for @assignment_chapter, method: :put, remote: true do |f|
+      %div#next_section
+        %h5
+          Please Answer the question to progress to the next section! 
+
+
+      .col-lg-12{"data-controller"=>"hello"}
+        =bootstrap_form_for @assignment_chapter, method: :put, remote: true, :html => {:"data-action" => 'ajax:success->hello#greet'} do |f|
           =f.text_field :answer, label:"Answer"
           =f.hidden_field :completed, value:true
-          =f.submit "Submit Answer", class: "btn btn-primary"
+          =f.submit "Submit Answer", class: "btn btn-primary" 
+        %br
+        %br
+        =link_to "Next Section", class_path(id:@subject.id),  class: "btn btn-warning", id:"the_next_section",:disabled => true
+        %br
+        %br
+        %h5
+          As the student completed the work by answering the questions the students progess will show up below as in json. This is just to show you the returned json that you wanted in the task. You can see it in the network tab as well.
 
+        %div#json{"data-target"=>"hello.json"}
 
       

@@ -33,3 +33,5 @@ import 'jquery.animate-number'
 import './local-js/hyper'
 import './local-js/home'
 // import "controllers"
+
+import "controllers"

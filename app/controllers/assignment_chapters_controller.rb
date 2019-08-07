@@ -2,6 +2,7 @@ class AssignmentChaptersController < ApplicationController
 
   def show
     @assignment_chapter = AssignmentChapter.find_by(id:params[:id])
+    @subject = @assignment_chapter.assignment.subject
   end
 
   def update
