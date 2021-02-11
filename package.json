@@ -5,7 +5,7 @@
     "@rails/webpacker": "^4.0.7",
     "@stimulus/polyfills": "^1.1.1",
     "admin-resources": "git+https://github.com/coderthemes/admin-resources#master",
-    "apexcharts": "^3.6.6",
+    "apexcharts": "^3.24.0",
     "blueimp-file-upload": "^9.28.0",
     "bootstrap": "^4.3.1",
     "bootstrap-datepicker": "^1.8.0",
