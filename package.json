@@ -42,7 +42,7 @@
     "jqvmap": "^1.5.1",
     "magnific-popup": "^1.1.0",
     "metismenu": "^3.0.4",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "moment-locales-webpack-plugin": "^1.0.7",
     "popper.js": "^1.15.0",
     "rails-ujs": "^5.2.3",
